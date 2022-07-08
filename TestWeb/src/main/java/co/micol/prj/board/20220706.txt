@@ -1,0 +1,26 @@
+empUpdate?employeeId=100
+
+create table board (
+id      number primary key,
+title   varchar2(100),
+content varchar2(1000),
+writer  varchar2(20),
+rdt     date,
+hit     number );
+
+insert into board values ( 1, 'test1' ,'test1입니다.', 'hong', '2022-06-10', 10);
+insert into board values ( 2, 'test2' ,'test2입니다.', 'kang', '2022-07-05', 22);
+
+commit;
+
+1. 테이블 참조 -> BoardVO
+src/main/java/co.micol.prj.board 패키지
+2. BoardDAO
+	selectAll()
+3. BoardListServ (boardList)
+   BoardInsertServ
+   BoardDeleteServ
+   BoardUpdateServ
+4. WEB/INF/jsp/board
+	boardList.jsp
+	boardInsert.jsp -> 복사 -> boardUpdate.jsp
